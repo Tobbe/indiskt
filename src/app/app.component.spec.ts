@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { DishDetailComponent } from './dish-detail.component';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
@@ -13,7 +14,7 @@ describe('AppComponent', function () {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports:      [ FormsModule ],
-      declarations: [ AppComponent ]
+      declarations: [ AppComponent, DishDetailComponent ]
     })
     .compileComponents();
   }));

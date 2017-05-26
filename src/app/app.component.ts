@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Dish {
-  id: number;
-  name: string;
-}
+import { Dish } from './dish';
 
 const DISHES: Dish[] = [
   { id: 11, name: 'Chicken Vindaloo' },
@@ -31,14 +28,7 @@ const DISHES: Dish[] = [
         <span class="badge">{{dish.id}}</span> {{dish.name}}
       </li>
     </ul>
-    <div *ngIf="selectedDish">
-      <h2>{{selectedDish.name}} details!</h2>
-      <div><label>id: </label>{{selectedDish.id}}</div>
-      <div>
-        <label>Name: </label>
-        <input [(ngModel)]="selectedDish.name" placeholder="name">
-      </div>
-    </div>
+    <dish-detail [dish]="selectedDish"></dish-detail>
     `,
   styles: [`
     .selected {
