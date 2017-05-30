@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import { DashboardComponent }  from './dashboard.component';
 import { DishesComponent }  from './dishes.component';
 import { DishDetailComponent } from './dish-detail.component';
+import { DishService } from './dish.service';
 
 @NgModule({
   imports: [
@@ -31,6 +32,9 @@ import { DishDetailComponent } from './dish-detail.component';
     DashboardComponent,
     DishesComponent,
     DishDetailComponent,
+  ],
+  providers: [
+    DishService
   ],
   bootstrap: [
     AppComponent,

@@ -66,7 +66,6 @@ import { DishService } from './dish.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-  providers: [DishService],
 })
 
 export class DishesComponent implements OnInit {
