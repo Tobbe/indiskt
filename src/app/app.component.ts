@@ -1,19 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Dish } from './dish';
-
-const DISHES: Dish[] = [
-  { id: 11, name: 'Chicken Vindaloo' },
-  { id: 12, name: 'Butter Chicken' },
-  { id: 13, name: 'Palak Paneer' },
-  { id: 14, name: 'Chicken Tikka' },
-  { id: 15, name: 'Red Devil' },
-  { id: 16, name: 'Indian pizza' },
-  { id: 17, name: 'Doner Kebab' },
-  { id: 18, name: 'Chickenn Karahi' },
-  { id: 19, name: 'Shahi Paneer' },
-  { id: 20, name: 'Chicken Saag' }
-];
+import { DishService } from './dish.service';
 
 @Component({
   selector: 'my-app',
@@ -78,14 +66,27 @@ const DISHES: Dish[] = [
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
+  `],
+  providers: [DishService],
 })
 
-export class AppComponent  {
-  dishes = DISHES;
+export class AppComponent implements OnInit {
   title = 'Indian food order form';
+  dishes: Dish[];
   selectedDish: Dish;
+
+  constructor(private dishService: DishService) { }
+
+  ngOnInit(): void {
+    this.getDishes();
+  }
+
   onSelect(dish: Dish): void {
     this.selectedDish = dish;
+  }
+
+  getDishes(): void {
+    this.dishService.getDishes()
+      .then(dishes => this.dishes = dishes);
   }
 }
