@@ -1,20 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+
+import { DishService } from './dish.service';
 
 import { Dish } from './dish';
 
 @Component({
   selector: 'dish-detail',
-  template: `
-    <div *ngIf="dish">
-      <h2>{{dish.name}} details!</h2>
-      <div><label>id: </label>{{dish.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="dish.name" placeholder="name"/>
-      </div>
-    </div>
-  `
+  templateUrl: './dish-detail.component.html',
 })
-export class DishDetailComponent {
+export class DishDetailComponent implements OnInit {
   @Input() dish: Dish;
+
+  constructor(
+    private dishService: DishService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params
+      .switchMap((params: Params) => this.dishService.getDish(+params['id']))
+      .subscribe(dish => this.dish = dish);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

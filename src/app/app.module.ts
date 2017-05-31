@@ -22,6 +22,9 @@ import { DishService } from './dish.service';
         path: 'dishes',
         component: DishesComponent,
       }, {
+        path: 'detail/:id',
+        component: DishDetailComponent,
+      }, {
         path: 'dashboard',
         component: DashboardComponent,
       },

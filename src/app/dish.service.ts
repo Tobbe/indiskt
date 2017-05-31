@@ -8,4 +8,10 @@ export class DishService {
   getDishes(): Promise<Dish[]> {
     return Promise.resolve(DISHES);
   }
+
+  getDish(id: number): Promise<Dish> {
+    return this
+      .getDishes()
+      .then(heroes => heroes.find(hero => hero.id === id));
+  }
 }
