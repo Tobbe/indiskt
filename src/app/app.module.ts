@@ -11,6 +11,7 @@ import { AppComponent }  from './app.component';
 import { DashboardComponent }  from './dashboard.component';
 import { DishesComponent }  from './dishes.component';
 import { DishDetailComponent } from './dish-detail.component';
+import { DishSearchComponent } from './dish-search.component';
 import { DishService } from './dish.service';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     DishesComponent,
     DishDetailComponent,
+    DishSearchComponent,
   ],
   providers: [
     DishService
