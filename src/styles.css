@@ -12,6 +12,8 @@ h2, h3 {
 }
 body {
   margin: 2em;
+  display: flex;
+  flex-flow: column wrap;
 }
 /* #enddocregion quickstart */
 body, input[text], button {

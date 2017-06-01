@@ -9,6 +9,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }  from './app.component';
 import { DashboardComponent }  from './dashboard.component';
+import { OrderComponent }  from './order.component';
+import { OrderFormComponent }  from './order-form.component';
 import { DishesComponent }  from './dishes.component';
 import { DishDetailComponent } from './dish-detail.component';
 import { DishSearchComponent } from './dish-search.component';
@@ -26,6 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     DashboardComponent,
+    OrderComponent,
+    OrderFormComponent,
     DishesComponent,
     DishDetailComponent,
     DishSearchComponent,

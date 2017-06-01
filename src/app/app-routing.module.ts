@@ -2,7 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from './dashboard.component';
-import { DishesComponent }      from './dishes.component';
+import { OrderComponent }      from './order.component';
 import { DishDetailComponent }  from './dish-detail.component';
 
 const routes: Routes = [
@@ -11,8 +11,8 @@ const routes: Routes = [
     redirectTo: '/dashboard',
     pathMatch: 'full'
   }, {
-    path: 'dishes',
-    component: DishesComponent,
+    path: 'order',
+    component: OrderComponent,
   }, {
     path: 'detail/:id',
     component: DishDetailComponent,

@@ -1,0 +1,8 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+order-form, my-dishes {
+  flex: 1;
+}
