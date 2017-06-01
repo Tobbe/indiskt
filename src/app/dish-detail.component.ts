@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -10,9 +10,10 @@ import { Dish } from './dish';
 @Component({
   selector: 'dish-detail',
   templateUrl: './dish-detail.component.html',
+  styleUrls: [ './dish-detail.component.css' ],
 })
 export class DishDetailComponent implements OnInit {
-  @Input() dish: Dish;
+  dish: Dish;
 
   constructor(
     private dishService: DishService,
