@@ -1,10 +1,23 @@
 <h2>Menu</h2>
+<div>
+  <label>Dish name:</label> <input #dishName />
+  <button (click)="add(dishName.value); dishName.value=''">
+    Add
+  </button>
+</div>
 <ul class="dishes">
   <li *ngFor="let dish of dishes"
     [class.selected]="dish === selectedDish"
     (click)="onSelect(dish)">
 
-    <span class="badge">{{dish.id}}</span> {{dish.name}}
+    <span class="badge">{{dish.id}}</span>
+    <span>{{dish.name}}</span>
+    <button
+      class="delete"
+      (click)="delete(dish); $event.stopPropagation()">
+
+      x
+    </button>
   </li>
 </ul>
 <div *ngIf="selectedDish">

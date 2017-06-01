@@ -30,4 +30,10 @@ export class DishDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.dishService
+      .update(this.dish)
+      .then(() => this.goBack());
+  }
 }
