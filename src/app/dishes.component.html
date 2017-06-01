@@ -7,4 +7,9 @@
     <span class="badge">{{dish.id}}</span> {{dish.name}}
   </li>
 </ul>
-<dish-detail [dish]="selectedDish"></dish-detail>
+<div *ngIf="selectedDish">
+  <h2>
+    {{selectedDish.name | uppercase}} is my favorite
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

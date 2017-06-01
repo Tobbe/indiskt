@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Dish } from './dish';
 import { DishService } from './dish.service';
@@ -12,7 +13,7 @@ export class DishesComponent implements OnInit {
   dishes: Dish[];
   selectedDish: Dish;
 
-  constructor(private dishService: DishService) { }
+  constructor(private dishService: DishService, private router: Router) { }
 
   ngOnInit(): void {
     this.getDishes();
@@ -25,5 +26,9 @@ export class DishesComponent implements OnInit {
   getDishes(): void {
     this.dishService.getDishes()
       .then(dishes => this.dishes = dishes);
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedDish.id]);
   }
 }
