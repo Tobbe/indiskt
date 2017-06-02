@@ -1,16 +1,16 @@
 <h2>Orderformulär</h2>
-<form>
+<form (ngSubmit)="onSubmit()" #orderForm="ngForm">
   <label>
     UID/epost
-    <input id="uid" required>
+    <input id="uid" name="uid" required [(ngModel)]="model.uid">
   </label>
   <label>
     Maträtt
-    <input id="dish" required>
+    <input id="dish" name="dish" required [(ngModel)]="model.dish">
   </label>
   <label>
     Styrka
-    <select id="spicyness">
+    <select id="spicyness" name="spicyness" [(ngModel)]="model.spicyness">
       <option value="mild">Svag</option>
       <option value="medium">Medium</option>
       <option value="hot">Stark</option>
@@ -20,7 +20,7 @@
   </label>
   <label>
     Ris
-    <select id="rice">
+    <select id="rice" name="rice" [(ngModel)]="model.rice">
       <option value="yes">Ja</option>
       <option value="little">Lite</option>
       <option value="no">Nej</option>
@@ -28,7 +28,7 @@
   </label>
   <label>
     Dryck
-    <select id="beverage">
+    <select id="beverage" name="beverage" [(ngModel)]="model.beverage">
       <option value="natural">Ramlösa naturell</option>
       <option value="citrus">Ramlösa citrus</option>
       <option value="coke">Coca Cola</option>
@@ -39,6 +39,8 @@
   </label>
   <label>
     Betalar till
-    <input id="pay-to" required>
+    <input id="payto" name="payto" required [(ngModel)]="model.payto">
   </label>
+  <button type="submit">Submit</button>
 </form>
+<code><pre>{{ model | json }}</pre></code>

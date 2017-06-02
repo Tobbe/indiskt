@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Dish } from './dish';
 import { DishService } from './dish.service';
+import { Order } from './order.model';
 
 @Component({
   selector: 'order-form',
@@ -12,45 +13,18 @@ import { DishService } from './dish.service';
 export class OrderFormComponent implements OnInit {
   dishes: Dish[];
   selectedDish: Dish;
+  model = new Order('tlb', 'Chicken Vindaloo', 'xhot', 'little', 'zero', '');
 
   constructor(private dishService: DishService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getDishes();
   }
 
-  onSelect(dish: Dish): void {
-    this.selectedDish = dish;
+  onSubmit(): void {
+    console.log('submit the form', this.model);
   }
 
-  getDishes(): void {
-    this.dishService.getDishes()
-      .then(dishes => this.dishes = dishes);
-  }
-
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedDish.id]);
-  }
-
-  add(name: string): void {
-    name = name.trim();
-
-    if (!name) { return; }
-
-    this.dishService
-      .create(name)
-      .then(dish => {
-        this.dishes.push(dish);
-        this.selectedDish = null;
-      });
-  }
-
-  delete(dish: Dish): void {
-    this.dishService
-      .delete(dish.id)
-      .then(() => {
-        this.dishes = this.dishes.filter(d => d !== dish);
-        if (this.selectedDish === dish) { this.selectedDish = null; }
-      });
+  get currentOrder(): string {
+    return JSON.stringify(this.model);
   }
 }
