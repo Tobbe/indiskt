@@ -11,8 +11,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { DishSearchService } from './dish-search.service';
-import { Dish } from './dish';
+import { DishSearchService } from '../dish-search.service';
+import { Dish } from '../dish';
 
 @Component({
   selector: 'dish-search',

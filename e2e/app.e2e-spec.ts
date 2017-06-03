@@ -1,15 +1,16 @@
-import { browser, element, by } from 'protractor';
+import { IndisktNgcliPage } from './app.po';
 
-describe('Indian Order E2E Tests', function () {
+describe('indiskt-ngcli App', () => {
+  let page: IndisktNgcliPage;
 
-  let expectedMsg = 'Indian food order form';
-
-  beforeEach(function () {
-    browser.get('');
+  beforeEach(() => {
+    page = new IndisktNgcliPage();
   });
 
-  it('should display: ' + expectedMsg, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
+  it('should display welcome message', done => {
+    page.navigateTo();
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
-
 });

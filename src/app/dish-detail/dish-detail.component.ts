@@ -3,9 +3,9 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { DishService } from './dish.service';
+import { DishService } from '../dish.service';
 
-import { Dish } from './dish';
+import { Dish } from '../dish';
 
 @Component({
   selector: 'dish-detail',

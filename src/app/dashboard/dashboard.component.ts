@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Dish } from './dish';
-import { DishService } from './dish.service';
+import { Dish } from '../dish';
+import { DishService } from '../dish.service';
 
 @Component({
   selector: 'my-dashboard',

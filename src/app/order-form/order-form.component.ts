@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Dish } from './dish';
-import { DishService } from './dish.service';
-import { Order } from './order.model';
+import { Dish } from '../dish';
+import { DishService } from '../dish.service';
+import { Order } from '../order.model';
 
 @Component({
   selector: 'order-form',

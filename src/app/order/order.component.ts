@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Dish } from './dish';
-import { DishService } from './dish.service';
+import { Dish } from '../dish';
+import { DishService } from '../dish.service';
 
 @Component({
-  selector: 'my-dishes',
-  templateUrl: './dishes.component.html',
-  styleUrls: [ './dishes.component.css' ],
+  selector: 'my-order',
+  templateUrl: './order.component.html',
+  styleUrls: [ './order.component.css' ],
 })
-export class DishesComponent implements OnInit {
+export class OrderComponent implements OnInit {
   dishes: Dish[];
   selectedDish: Dish;
 
