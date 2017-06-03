@@ -5,4 +5,12 @@
 
 export const environment = {
   production: false,
+  firebase: {
+    apiKey: "AIzaSyClC-iflumX0WlSVzy_sTc1CMaBvwJFabM",
+    authDomain: "indiskt-33baa.firebaseapp.com",
+    databaseURL: "https://indiskt-33baa.firebaseio.com",
+    projectId: "indiskt-33baa",
+    storageBucket: "indiskt-33baa.appspot.com",
+    messagingSenderId: "767755293874",
+  },
 };
