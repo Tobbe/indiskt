@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { DashboardComponent }  from './dashboard/dashboard.component';
 import { OrderComponent }  from './order/order.component';
 import { OrderFormComponent }  from './order-form/order-form.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { DishesComponent }  from './dishes/dishes.component';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import { DishSearchComponent } from './dish-search/dish-search.component';
@@ -28,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     OrderComponent,
     OrderFormComponent,
+    OrderSummaryComponent,
     DishesComponent,
     DishDetailComponent,
     DishSearchComponent,

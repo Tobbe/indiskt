@@ -28,6 +28,7 @@ export class OrderFormComponent implements OnInit {
     console.log('submit the form', this.model);
     this.model.date = new Date().toISOString();
     this.orders.push(this.model);
+    this.router.navigate(['/ordersummary']);
   }
 
   get currentOrder(): string {
