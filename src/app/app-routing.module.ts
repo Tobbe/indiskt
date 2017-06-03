@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { OrderComponent }      from './order/order.component';
 import { DishDetailComponent }  from './dish-detail/dish-detail.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,10 @@ const routes: Routes = [
   }, {
     path: 'dashboard',
     component: DashboardComponent,
-  },
+  }, {
+    path: 'ordersummary',
+    component: OrderSummaryComponent,
+  },  
 ];
 
 @NgModule({

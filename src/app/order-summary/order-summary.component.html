@@ -1,0 +1,23 @@
+<h2>Alla beställningar</h2>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Maträtt</th>
+      <th>Styrka</th>
+      <th>Ris</th>
+      <th>Dryck</th>
+      <th>Bestalar till</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders | async">
+      <td>{{ order.uid }}</td>
+      <td>{{ order.dish }}</td>
+      <td>{{ order.spicyness }}</td>
+      <td>{{ order.rice }}</td>
+      <td>{{ order.beverage }}</td>
+      <td>{{ order.payto }}</td>
+    </tr>
+  </tbody>
+</table>
