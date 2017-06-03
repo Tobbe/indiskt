@@ -15,7 +15,7 @@ import { Order } from '../order.model';
 export class OrderFormComponent implements OnInit {
   dishes: Dish[];
   selectedDish: Dish;
-  model = new Order('tlb', 'Chicken Vindaloo', 'xhot', 'little', 'zero', '');
+  model = new Order('tlb', 'Chicken Vindaloo', 'xhot', 'little', true, 'zero', '');
   orders: FirebaseListObservable<any[]>;
 
   constructor(private dishService: DishService, private router: Router, private db: AngularFireDatabase) { }
@@ -26,6 +26,7 @@ export class OrderFormComponent implements OnInit {
 
   onSubmit(): void {
     console.log('submit the form', this.model);
+    this.model.date = new Date().toISOString();
     this.orders.push(this.model);
   }
 
